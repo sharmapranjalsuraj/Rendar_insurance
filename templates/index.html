@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insurance Cost Predictor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 4px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Insurance Cost Predictor</h2>
+    <form method="POST" action="/predict_web">
+      <label>Age:</label>
+      <input type="number" name="age" required>
+
+      <label>Sex:</label>
+      <select name="sex" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label>BMI:</label>
+      <input type="number" name="bmi" step="0.01" required>
+
+      <label>Children:</label>
+      <input type="number" name="children" required>
+
+      <label>Smoker:</label>
+      <select name="smoker" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>Region:</label>
+      <select name="region" required>
+        <option value="southeast">Southeast</option>
+        <option value="southwest">Southwest</option>
+        <option value="northeast">Northeast</option>
+        <option value="northwest">Northwest</option>
+      </select>
+
+      <button type="submit">Predict</button>
+    </form>
+    <div class="footer">by Arbaaz | Flask + ML App</div>
+  </div>
+</body>
+</html>
